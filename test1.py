@@ -1,8 +1,9 @@
 import os
 
 from flask import Flask, jsonify
-from gcp_utils.googlebucket import gcs_download_file
+from shaktiutils.gcp_utils.googlebucket import gcs_download_file
 from joblib import load
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 
@@ -12,6 +13,7 @@ model = None
 @app.before_request
 def load_resources():
     '''Flask template is currently only for scikit-learn models'''
+    load_dotenv()
     if not model:
         model_path = gcs_download_file(os.environ.get("MODEL_PATH"))
         model = load(model_path)
