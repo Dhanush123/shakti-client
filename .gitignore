@@ -125,3 +125,4 @@ dmypy.json
 .pyre/
 
 gcs_creds.json
+.DS_Store
