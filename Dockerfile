@@ -11,6 +11,7 @@ WORKDIR $APP_HOME
 ENV GCS_BUCKET_NAME shakti0
 ENV GOOGLE_APPLICATION_CREDENTIALS gcs_creds.json
 ENV PROJECT_ID shakti123
+ENV GCP_EMAIL personalprojects0@gmail.com
 
 
 # must run deploy command from folder containing server code
